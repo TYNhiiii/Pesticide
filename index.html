@@ -15,6 +15,11 @@
       Icon 10CS 62.5ml - Giải pháp chuyên nghiệp kiểm soát côn trùng | Syngenta
       PPM
     </title>
+    <!-- Sử dụng font Roboto để tạo sự đồng nhất và chuyên nghiệp -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --primary-color: #009639;
@@ -32,9 +37,15 @@
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Roboto', sans-serif;
         line-height: 1.6;
         color: var(--text-color);
+        /* Letter spacing chung để tăng độ rõ nét */
+        letter-spacing: 0.3px;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 0.5px;
       }
 
       .container {
@@ -69,7 +80,7 @@
 
       .left-nav a,
       .right-nav a {
-        margin: 0 15px;
+        margin: 0 12px;
         color: var(--light-text);
         text-decoration: none;
       }
@@ -121,6 +132,7 @@
         font-weight: 500;
         transition: color 0.3s;
         padding: 5px 0;
+        letter-spacing: 0.5px;
       }
 
       nav ul li a:hover {
@@ -971,6 +983,7 @@
         color: rgba(255, 255, 255, 0.7);
       }
 
+      /* Responsive Adjustments */
       @media (max-width: 992px) {
         .product-section {
           flex-direction: column;
@@ -1066,39 +1079,39 @@
         }
       }
 
-      /* Icons (using Unicode symbols as placeholders) */
+      /* Cập nhật Icon: sử dụng các ký tự Unicode đơn giản, hiện đại */
       .icon-shield::before {
-        content: "🛡️";
+        content: "🛡";
       }
       .icon-lab::before {
-        content: "🧪";
+        content: "🔬";
       }
       .icon-target::before {
         content: "🎯";
       }
       .icon-home::before {
-        content: "🏠";
+        content: "⌂";
       }
       .icon-restaurant::before {
-        content: "🍽️";
+        content: "🍽";
       }
       .icon-hotel::before {
-        content: "🏨";
+        content: "🛎";
       }
       .icon-farm::before {
-        content: "🏡";
+        content: "🌾";
       }
       .icon-document::before {
         content: "📄";
       }
       .icon-video::before {
-        content: "📹";
+        content: "🎥";
       }
       .icon-chart::before {
-        content: "📊";
+        content: "📈";
       }
       .icon-case::before {
-        content: "📋";
+        content: "🗂";
       }
     </style>
   </head>
@@ -1497,9 +1510,7 @@
             <div class="case-card">
               <div
                 class="case-img"
-                style="
-                  background-image: url('https://www.syngentappm.id/sites/g/files/kgtney606/files/styles/syngenta_3_1_cropped/public/media/image/2019/07/02/actellic_300cs_400x135.jpg?itok=-IbgXL8J');
-                "
+                style="background-image: url('https://www.syngentappm.id/sites/g/files/kgtney606/files/styles/syngenta_3_1_cropped/public/media/image/2019/07/02/actellic_300cs_400x135.jpg?itok=-IbgXL8J');"
               ></div>
               <div class="case-content">
                 <h3>Chuỗi nhà hàng ABC</h3>
@@ -1524,9 +1535,7 @@
             <div class="case-card">
               <div
                 class="case-img"
-                style="
-                  background-image: url('https://www.syngentappm.id/sites/g/files/kgtney606/files/styles/syngenta_3_1_cropped/public/media/image/2019/06/28/advion_cockroach_400x135_1106.jpg?itok=cVy1tRWT');
-                "
+                style="background-image: url('https://www.syngentappm.id/sites/g/files/kgtney606/files/styles/syngenta_3_1_cropped/public/media/image/2019/06/28/advion_cockroach_400x135_1106.jpg?itok=cVy1tRWT');"
               ></div>
               <div class="case-content">
                 <h3>Resort XYZ tại Phú Quốc</h3>
@@ -1550,9 +1559,7 @@
             <div class="case-card">
               <div
                 class="case-img"
-                style="
-                  background-image: url('https://www.syngentappm.id/sites/g/files/kgtney606/files/styles/syngenta_3_1_cropped/public/media/image/2019/06/28/zyroxfly_931.5rb_400x135.jpg?itok=vS4gUIWq');
-                "
+                style="background-image: url('https://www.syngentappm.id/sites/g/files/kgtney606/files/styles/syngenta_3_1_cropped/public/media/image/2019/06/28/zyroxfly_931.5rb_400x135.jpg?itok=vS4gUIWq');"
               ></div>
               <div class="case-content">
                 <h3>Trang trại chăn nuôi MNP</h3>
