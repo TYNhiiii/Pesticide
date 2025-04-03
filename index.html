@@ -15,7 +15,7 @@
       Icon 10CS 62.5ml - Giải pháp chuyên nghiệp kiểm soát côn trùng | Syngenta
       PPM
     </title>
-    <!-- Sử dụng font Roboto để tạo sự đồng nhất và chuyên nghiệp -->
+    <!-- Sử dụng font Roboto cho giao diện hiện đại, đồng nhất -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
       rel="stylesheet"
@@ -28,6 +28,7 @@
         --text-color: #333;
         --light-text: #666;
         --border-color: #ddd;
+        --transition: 0.3s ease-out;
       }
 
       * {
@@ -40,8 +41,8 @@
         font-family: 'Roboto', sans-serif;
         line-height: 1.6;
         color: var(--text-color);
-        /* Letter spacing chung để tăng độ rõ nét */
         letter-spacing: 0.3px;
+        background-color: #fff;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -54,44 +55,40 @@
         padding: 0 20px;
       }
 
+      /* --- Header & Navigation --- */
       header {
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         position: sticky;
         top: 0;
         z-index: 100;
+        border-bottom: 1px solid var(--border-color);
       }
 
       .top-header {
         background-color: #f5f5f5;
-        padding: 8px 0;
+        padding: 6px 0;
         font-size: 14px;
       }
 
       .top-nav {
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
 
-      .left-nav,
-      .right-nav {
+      .left-nav, .right-nav {
         display: flex;
       }
 
-      .left-nav a,
-      .right-nav a {
-        margin: 0 12px;
+      .left-nav a, .right-nav a {
+        margin: 0 10px;
         color: var(--light-text);
         text-decoration: none;
+        transition: color var(--transition);
       }
 
-      .left-nav a:first-child,
-      .right-nav a:first-child {
-        margin-left: 0;
-      }
-
-      .left-nav a:hover,
-      .right-nav a:hover {
+      .left-nav a:hover, .right-nav a:hover {
         color: var(--primary-color);
       }
 
@@ -110,6 +107,11 @@
 
       .logo img {
         height: 50px;
+        transition: transform var(--transition);
+      }
+
+      .logo img:hover {
+        transform: scale(1.05);
       }
 
       .logo span {
@@ -130,9 +132,8 @@
         text-decoration: none;
         color: var(--text-color);
         font-weight: 500;
-        transition: color 0.3s;
-        padding: 5px 0;
-        letter-spacing: 0.5px;
+        padding: 8px 0;
+        transition: color var(--transition), border-bottom var(--transition);
       }
 
       nav ul li a:hover {
@@ -140,8 +141,9 @@
         border-bottom: 2px solid var(--primary-color);
       }
 
+      /* --- Breadcrumbs --- */
       .breadcrumbs {
-        padding: 10px 0;
+        padding: 12px 0;
         font-size: 14px;
         color: var(--light-text);
         margin-bottom: 20px;
@@ -150,27 +152,30 @@
       .breadcrumbs a {
         color: var(--light-text);
         text-decoration: none;
+        transition: color var(--transition);
       }
 
       .breadcrumbs a:hover {
         color: var(--primary-color);
       }
 
+      /* --- Product Section --- */
       .product-section {
         display: flex;
         margin-bottom: 40px;
         border: 1px solid var(--border-color);
-        border-radius: 5px;
+        border-radius: 8px;
         overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       }
 
       .product-image {
         width: 40%;
         padding: 30px;
+        background-color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: white;
       }
 
       .product-image img {
@@ -181,7 +186,10 @@
         width: 60%;
         padding: 30px;
         background-color: var(--accent-color);
-        color: white;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .product-title {
@@ -191,12 +199,13 @@
 
       .status {
         display: inline-block;
-        padding: 3px 8px;
+        padding: 4px 10px;
         background-color: #333;
-        color: white;
+        color: #fff;
         font-size: 12px;
         margin-bottom: 15px;
         text-transform: uppercase;
+        border-radius: 3px;
       }
 
       .updated {
@@ -226,7 +235,7 @@
       }
 
       .spec-label {
-        font-weight: bold;
+        font-weight: 600;
         font-size: 14px;
         margin-bottom: 5px;
       }
@@ -235,12 +244,16 @@
         font-size: 14px;
       }
 
+      /* --- Hero Section (nếu có) --- */
       .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
           url("https://www.syngentappm.id/sites/g/files/kgtney606/files/media/image/2019/06/17/syngenta_icon_100cs_400x135.jpg?itok=bIF0wkyB")
             no-repeat center center;
         background-size: cover;
-        color: white;
+        color: #fff;
         padding: 80px 0;
         text-align: center;
         margin-bottom: 50px;
@@ -261,18 +274,21 @@
       .btn {
         display: inline-block;
         background-color: var(--primary-color);
-        color: white;
+        color: #fff;
         padding: 12px 25px;
         text-decoration: none;
         border-radius: 5px;
         font-weight: 600;
-        transition: background-color 0.3s;
+        transition: background-color var(--transition),
+          transform var(--transition);
       }
 
       .btn:hover {
         background-color: #007a33;
+        transform: translateY(-2px);
       }
 
+      /* --- Tabs --- */
       .tabs {
         display: flex;
         list-style: none;
@@ -291,6 +307,7 @@
         font-weight: bold;
         text-decoration: none;
         position: relative;
+        transition: color var(--transition);
       }
 
       .tabs a.active {
@@ -301,10 +318,11 @@
         content: "";
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -1px;
         width: 100%;
         height: 3px;
         background-color: var(--primary-color);
+        border-radius: 2px;
       }
 
       .tab-content {
@@ -316,6 +334,7 @@
         display: block;
       }
 
+      /* --- Section Titles --- */
       .sec-title {
         text-align: center;
         margin-bottom: 40px;
@@ -325,8 +344,8 @@
         font-size: 2rem;
         color: var(--primary-color);
         margin-bottom: 15px;
-        position: relative;
         display: inline-block;
+        position: relative;
       }
 
       .sec-title h2::after {
@@ -338,6 +357,7 @@
         width: 80px;
         height: 3px;
         background-color: var(--accent-color);
+        border-radius: 2px;
       }
 
       .section-title {
@@ -355,10 +375,12 @@
         color: var(--primary-color);
       }
 
+      /* --- Overview & Layout --- */
       .overview {
         display: flex;
         align-items: center;
         margin-bottom: 60px;
+        gap: 30px;
       }
 
       .overview-img {
@@ -387,6 +409,7 @@
         margin-bottom: 15px;
       }
 
+      /* --- Technical Specs --- */
       .tech-specs {
         background-color: var(--secondary-color);
         padding: 60px 0;
@@ -400,12 +423,17 @@
       }
 
       .spec-card {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         padding: 25px;
         width: calc(50% - 15px);
         margin-bottom: 30px;
+        transition: transform var(--transition);
+      }
+
+      .spec-card:hover {
+        transform: translateY(-3px);
       }
 
       .spec-card h3 {
@@ -416,8 +444,10 @@
         border-bottom: 1px solid var(--border-color);
       }
 
+      /* --- Product Layout --- */
       .product-layout {
         display: flex;
+        gap: 30px;
       }
 
       .product-main {
@@ -429,24 +459,27 @@
         width: 30%;
         background-color: var(--accent-color);
         padding: 20px;
-        border-radius: 5px;
-        color: white;
+        border-radius: 8px;
+        color: #fff;
         height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
       }
 
       .sidebar-title {
         font-size: 24px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
 
       .sidebar-info {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
 
       .sidebar-label {
-        font-weight: bold;
+        font-weight: 600;
         font-size: 14px;
-        margin-bottom: 5px;
+        margin-bottom: 3px;
       }
 
       .sidebar-value {
@@ -455,34 +488,35 @@
 
       .sidebar-btn {
         display: inline-block;
-        padding: 8px 20px;
+        padding: 10px 25px;
         background-color: #ff9900;
-        color: white;
+        color: #fff;
         border-radius: 20px;
-        font-weight: bold;
-        margin-top: 20px;
+        font-weight: 600;
         text-decoration: none;
+        transition: background-color var(--transition),
+          transform var(--transition);
+        text-align: center;
       }
 
       .sidebar-btn:hover {
         background-color: #e68a00;
+        transform: translateY(-2px);
       }
 
-      .benefit-list,
-      .feature-list {
+      /* --- Lists --- */
+      .benefit-list, .feature-list {
         list-style: none;
         margin-bottom: 30px;
       }
 
-      .feature-list li,
-      .benefit-list li {
+      .feature-list li, .benefit-list li {
         margin-bottom: 10px;
         padding-left: 20px;
         position: relative;
       }
 
-      .feature-list li::before,
-      .benefit-list li::before {
+      .feature-list li::before, .benefit-list li::before {
         content: "•";
         position: absolute;
         left: 0;
@@ -490,6 +524,7 @@
         font-weight: bold;
       }
 
+      /* --- Benefits --- */
       .benefits {
         margin-bottom: 60px;
       }
@@ -497,21 +532,21 @@
       .benefits-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px;
+        gap: 30px;
       }
 
       .benefit-card {
         background-color: var(--secondary-color);
-        border-radius: 10px;
+        border-radius: 8px;
         padding: 30px;
         text-align: center;
-        transition: transform 0.3s;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform var(--transition), box-shadow var(--transition);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       }
 
       .benefit-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
 
       .benefit-icon {
@@ -526,6 +561,7 @@
         color: var(--primary-color);
       }
 
+      /* --- Usage --- */
       .usage {
         margin-bottom: 60px;
       }
@@ -533,6 +569,7 @@
       .usage-container {
         display: flex;
         flex-wrap: wrap;
+        gap: 30px;
       }
 
       .usage-content {
@@ -550,16 +587,17 @@
       .usage-img img {
         max-width: 100%;
         border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
+      /* --- Table --- */
       table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
       }
 
-      table th,
-      table td {
+      table th, table td {
         padding: 12px 15px;
         text-align: left;
         border-bottom: 1px solid var(--border-color);
@@ -567,13 +605,14 @@
 
       table th {
         background-color: var(--primary-color);
-        color: white;
+        color: #fff;
       }
 
       table tr:nth-child(even) {
         background-color: var(--secondary-color);
       }
 
+      /* --- Steps --- */
       .steps {
         counter-reset: step-counter;
         list-style-type: none;
@@ -594,7 +633,7 @@
         left: 0;
         top: 0;
         background-color: var(--primary-color);
-        color: white;
+        color: #fff;
         font-weight: bold;
         width: 30px;
         height: 30px;
@@ -604,11 +643,13 @@
         justify-content: center;
       }
 
+      /* --- Warning Box --- */
       .warning {
         background-color: #fff3cd;
         border-left: 4px solid #ffc107;
         padding: 15px;
         margin-bottom: 20px;
+        border-radius: 4px;
       }
 
       .warning h4 {
@@ -616,6 +657,7 @@
         margin-bottom: 10px;
       }
 
+      /* --- Cases --- */
       .cases {
         margin-bottom: 60px;
       }
@@ -623,14 +665,19 @@
       .case-studies {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px;
+        gap: 30px;
       }
 
       .case-card {
         border: 1px solid var(--border-color);
-        border-radius: 10px;
+        border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform var(--transition);
+      }
+
+      .case-card:hover {
+        transform: translateY(-3px);
       }
 
       .case-img {
@@ -678,6 +725,7 @@
         color: var(--light-text);
       }
 
+      /* --- FAQ / Accordion --- */
       .faq {
         margin-bottom: 60px;
       }
@@ -688,9 +736,10 @@
 
       .accordion-item {
         border: 1px solid var(--border-color);
-        border-radius: 5px;
+        border-radius: 4px;
         margin-bottom: 10px;
         overflow: hidden;
+        transition: background-color var(--transition);
       }
 
       .accordion-header {
@@ -711,10 +760,10 @@
         padding: 0 20px;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
       }
 
-      .active .accordion-content {
+      .accordion-item.active .accordion-content {
         padding: 20px;
         max-height: 500px;
       }
@@ -723,12 +772,15 @@
         content: "+";
         font-size: 1.5rem;
         font-weight: 300;
+        transition: transform var(--transition);
       }
 
-      .active .accordion-header::after {
+      .accordion-item.active .accordion-header::after {
         content: "-";
+        transform: rotate(180deg);
       }
 
+      /* --- Resources --- */
       .resources {
         margin-bottom: 60px;
       }
@@ -736,12 +788,12 @@
       .resources-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 30px;
+        gap: 30px;
       }
 
       .resource-list {
         background-color: var(--secondary-color);
-        border-radius: 10px;
+        border-radius: 8px;
         padding: 25px;
       }
 
@@ -793,11 +845,12 @@
         white-space: nowrap;
       }
 
+      /* --- Downloads --- */
       .downloads-container {
         background-color: var(--accent-color);
         padding: 20px;
-        border-radius: 5px;
-        color: white;
+        border-radius: 8px;
+        color: #fff;
       }
 
       .download-item {
@@ -821,8 +874,8 @@
       }
 
       .download-name {
-        font-weight: bold;
-        color: white;
+        font-weight: 600;
+        color: #fff;
         margin-bottom: 5px;
       }
 
@@ -832,10 +885,17 @@
       }
 
       .download-btn {
-        color: white;
+        color: #fff;
         text-decoration: none;
+        font-size: 1.2rem;
+        transition: transform var(--transition);
       }
 
+      .download-btn:hover {
+        transform: scale(1.1);
+      }
+
+      /* --- Related Products --- */
       .related-products {
         margin: 60px 0;
       }
@@ -853,15 +913,19 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        position: relative;
       }
 
       .product-card {
         border: 1px solid #eee;
-        border-radius: 5px;
+        border-radius: 8px;
         overflow: hidden;
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform var(--transition);
+      }
+
+      .product-card:hover {
+        transform: translateY(-3px);
       }
 
       .card-image {
@@ -882,16 +946,16 @@
 
       .card-title {
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 600;
         margin-bottom: 10px;
         color: var(--primary-color);
       }
 
       .card-status {
         display: inline-block;
-        padding: 3px 8px;
+        padding: 4px 8px;
         background-color: var(--accent-color);
-        color: white;
+        color: #fff;
         font-size: 12px;
         border-radius: 3px;
         margin-bottom: 15px;
@@ -908,24 +972,30 @@
         align-items: center;
         color: var(--accent-color);
         font-size: 14px;
-        font-weight: bold;
+        font-weight: 600;
         text-decoration: none;
+        transition: color var(--transition);
+      }
+
+      .read-more:hover {
+        color: var(--primary-color);
       }
 
       .read-more svg {
         margin-left: 5px;
       }
 
+      /* --- Footer --- */
       footer {
         background-color: var(--primary-color);
-        color: white;
+        color: #fff;
         padding: 50px 0 20px;
       }
 
       .footer-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 30px;
+        gap: 30px;
         margin-bottom: 40px;
       }
 
@@ -944,6 +1014,7 @@
         width: 50px;
         height: 2px;
         background-color: var(--accent-color);
+        border-radius: 2px;
       }
 
       .footer-col ul {
@@ -957,11 +1028,11 @@
       .footer-col ul li a {
         color: rgba(255, 255, 255, 0.8);
         text-decoration: none;
-        transition: color 0.3s;
+        transition: color var(--transition);
       }
 
       .footer-col ul li a:hover {
-        color: white;
+        color: #fff;
       }
 
       .footer-col.contact p {
@@ -983,55 +1054,42 @@
         color: rgba(255, 255, 255, 0.7);
       }
 
-      /* Responsive Adjustments */
+      /* --- Responsive --- */
       @media (max-width: 992px) {
         .product-section {
           flex-direction: column;
         }
-
-        .product-image,
-        .product-details {
+        .product-image, .product-details {
           width: 100%;
         }
-
         .product-layout {
           flex-direction: column;
         }
-
-        .product-main,
-        .product-sidebar {
+        .product-main, .product-sidebar {
           width: 100%;
         }
-
         .product-main {
           padding-right: 0;
           margin-bottom: 30px;
         }
-
         .overview {
           flex-direction: column;
         }
-
         .overview-img {
           margin-bottom: 30px;
         }
-
         .spec-card {
           width: 100%;
         }
-
         .benefits-container {
           grid-template-columns: repeat(2, 1fr);
         }
-
         .case-studies {
           grid-template-columns: repeat(2, 1fr);
         }
-
         .footer-container {
           grid-template-columns: repeat(2, 1fr);
         }
-
         .products-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -1041,45 +1099,27 @@
         .header-container {
           flex-direction: column;
         }
-
         nav ul {
           margin-top: 20px;
           flex-wrap: wrap;
           justify-content: center;
         }
-
         nav ul li {
           margin: 0 10px 10px;
         }
-
         .top-nav {
           flex-direction: column;
           align-items: center;
         }
-
-        .left-nav,
-        .right-nav {
+        .left-nav, .right-nav {
           margin-bottom: 5px;
         }
-
-        .benefits-container {
-          grid-template-columns: 1fr;
-        }
-
-        .case-studies {
-          grid-template-columns: 1fr;
-        }
-
-        .resources-container {
-          grid-template-columns: 1fr;
-        }
-
-        .products-grid {
+        .benefits-container, .case-studies, .resources-container, .products-grid {
           grid-template-columns: 1fr;
         }
       }
 
-      /* Cập nhật Icon: sử dụng các ký tự Unicode đơn giản, hiện đại */
+      /* --- Icon Styles --- */
       .icon-shield::before {
         content: "🛡";
       }
@@ -1177,48 +1217,39 @@
           <h1 class="product-title">Icon 10CS 62.5ml</h1>
           <div class="status">HOẠT ĐỘNG</div>
           <div class="updated">CẬP NHẬT GẦN NHẤT: 01.04.2025</div>
-
           <h2 class="product-category">THUỐC DIỆT CÔN TRÙNG</h2>
           <h3 class="product-subcategory">
             QUẢN LÝ DỊCH HẠI CHUYÊN NGHIỆP, KIỂM SOÁT TRUNG GIAN
           </h3>
-
           <div class="specs-grid">
             <div class="spec-item">
               <div class="spec-label">Số đăng ký:</div>
               <div class="spec-value">RI. 081108950782</div>
             </div>
-
             <div class="spec-item">
               <div class="spec-label">Quy cách đóng gói:</div>
               <div class="spec-value">62.5 ml</div>
             </div>
-
             <div class="spec-item">
               <div class="spec-label">Thành phần:</div>
               <div class="spec-value">10 g/L Lambda-cyhalothrin</div>
             </div>
-
             <div class="spec-item">
               <div class="spec-label">Nhóm hóa học:</div>
               <div class="spec-value">Pyrethroid</div>
             </div>
-
             <div class="spec-item">
               <div class="spec-label">Nhóm hoạt động:</div>
               <div class="spec-value">Nhóm 3A thuốc diệt côn trùng</div>
             </div>
-
             <div class="spec-item">
               <div class="spec-label">Dạng bào chế:</div>
               <div class="spec-value">CS (Vi nang)</div>
             </div>
-
             <div class="spec-item">
               <div class="spec-label">Cơ chế tác động:</div>
               <div class="spec-value">Tiếp xúc</div>
             </div>
-
             <div class="spec-item">
               <div class="spec-label">Ngày hết hạn phê duyệt:</div>
               <div class="spec-value">11.06.2026</div>
@@ -1243,7 +1274,6 @@
         <div class="product-layout">
           <div class="product-main">
             <h2 class="section-title">Tổng quan sản phẩm</h2>
-
             <div class="overview">
               <div class="overview-img">
                 <img
@@ -1260,7 +1290,6 @@
                   10CS tạo hiệu ứng "bẫy côn trùng" trên các bề mặt, đảm bảo
                   hiệu quả diệt côn trùng lâu dài và toàn diện.
                 </p>
-
                 <h3>Thông tin cơ bản</h3>
                 <ul>
                   <li>
@@ -1276,7 +1305,6 @@
                 </ul>
               </div>
             </div>
-
             <h3 class="subsection-title">Đặc tính nổi bật</h3>
             <ul class="feature-list">
               <li>Thuốc diệt côn trùng phổ rộng</li>
@@ -1285,7 +1313,6 @@
               <li>Tác động tiếp xúc và dạ dày mạnh mẽ</li>
               <li>Tồn tại lâu trên bề mặt xử lý</li>
             </ul>
-
             <h3 class="subsection-title">Lợi ích chính</h3>
             <ul class="benefit-list">
               <li>Kiểm soát dư lượng lâu dài</li>
@@ -1297,7 +1324,6 @@
               <li>Tiết kiệm chi phí, hiệu quả cao với liều lượng thấp</li>
               <li>Công nghệ vi nang giảm thiểu rủi ro với người sử dụng</li>
             </ul>
-
             <div class="tech-specs">
               <h3 class="subsection-title">Thông số kỹ thuật</h3>
               <div class="specs-container">
@@ -1342,56 +1368,45 @@
               </div>
             </div>
           </div>
-
           <div class="product-sidebar">
             <img
               src="https://www.syngentappm.id/sites/g/files/kgtney606/files/media/image/2019/06/17/syngenta_icon_100cs_400x135.jpg?itok=bIF0wkyB"
               alt="ICON 10CS 62.5ml"
-              style="width: 100%; margin-bottom: 20px"
+              style="width: 100%; border-radius: 4px;"
             />
-
             <h3 class="sidebar-title">Icon 10CS 62.5ml</h3>
-
             <div class="sidebar-info">
               <div class="sidebar-label">CẬP NHẬT GẦN NHẤT:</div>
               <div>01.04.2025</div>
             </div>
-
             <div class="sidebar-info">
               <div class="sidebar-label">THUỐC DIỆT CÔN TRÙNG</div>
             </div>
-
             <div class="sidebar-info">
               <div class="sidebar-label">
                 QUẢN LÝ DỊCH HẠI CHUYÊN NGHIỆP, KIỂM SOÁT TRUNG GIAN
               </div>
             </div>
-
             <div class="sidebar-info">
               <div class="sidebar-label">Thành phần:</div>
               <div>10 g/L Lambda-cyhalothrin</div>
             </div>
-
             <div class="sidebar-info">
               <div class="sidebar-label">Nhóm hóa học:</div>
               <div>Pyrethroid</div>
             </div>
-
             <div class="sidebar-info">
               <div class="sidebar-label">Nhóm hoạt động:</div>
               <div>Nhóm 3A thuốc diệt côn trùng</div>
             </div>
-
             <div class="sidebar-info">
               <div class="sidebar-label">Dạng bào chế:</div>
               <div>CS (Vi nang)</div>
             </div>
-
             <div class="sidebar-info">
               <div class="sidebar-label">Cơ chế tác động:</div>
               <div>Tiếp xúc</div>
             </div>
-
             <a href="#downloads" class="sidebar-btn">Tải xuống tài liệu</a>
           </div>
         </div>
@@ -1402,13 +1417,11 @@
     <div id="applications" class="tab-content">
       <div class="container">
         <h2 class="section-title">Ứng dụng và hướng dẫn sử dụng</h2>
-
         <div class="usage-container">
           <div class="usage-content">
             <h3>Ứng dụng linh hoạt đa dạng</h3>
             <p>
-              Icon 10CS 62.5ml phù hợp cho nhiều không gian và nhu cầu khác
-              nhau:
+              Icon 10CS 62.5ml phù hợp cho nhiều không gian và nhu cầu khác nhau:
             </p>
             <ul>
               <li>
@@ -1427,16 +1440,14 @@
                 quả, duy trì môi trường sạch sẽ cho du khách
               </li>
               <li>
-                <span class="icon-farm"></span> <strong>Nhà nuôi yến</strong> -
-                Diệt gián hiệu quả mà không ảnh hưởng đến chim yến
+                <span class="icon-farm"></span>
+                <strong>Nhà nuôi yến</strong> - Diệt gián hiệu quả mà không ảnh hưởng đến chim yến
               </li>
               <li>
                 <span class="icon-farm"></span>
-                <strong>Chuồng chăn nuôi quy mô vừa và nhỏ</strong> - Bảo vệ sức
-                khỏe vật nuôi, kiểm soát côn trùng trung gian gây bệnh
+                <strong>Chuồng chăn nuôi quy mô vừa và nhỏ</strong> - Bảo vệ sức khỏe vật nuôi, kiểm soát côn trùng trung gian gây bệnh
               </li>
             </ul>
-
             <h3>Tỷ lệ pha chế</h3>
             <table>
               <tr>
@@ -1460,36 +1471,26 @@
                 <td>20m²</td>
               </tr>
             </table>
-
             <h3>Cách thức sử dụng</h3>
             <ol class="steps">
               <li>
-                <strong>Chuẩn bị</strong>: Đeo găng tay và khẩu trang bảo hộ
-                trước khi sử dụng
+                <strong>Chuẩn bị</strong>: Đeo găng tay và khẩu trang bảo hộ trước khi sử dụng
               </li>
               <li>
-                <strong>Pha chế</strong>: Lắc đều chai trước khi sử dụng. Đong
-                lượng thuốc cần thiết và pha với nước sạch theo tỷ lệ khuyến cáo
+                <strong>Pha chế</strong>: Lắc đều chai trước khi sử dụng. Đong lượng thuốc cần thiết và pha với nước sạch theo tỷ lệ khuyến cáo
               </li>
               <li>
-                <strong>Phun xịt</strong>: Sử dụng bình phun cầm tay, phun đều
-                lên các bề mặt nơi côn trùng thường xuất hiện hoặc di chuyển
+                <strong>Phun xịt</strong>: Sử dụng bình phun cầm tay, phun đều lên các bề mặt nơi côn trùng thường xuất hiện hoặc di chuyển
               </li>
               <li>
-                <strong>Khu vực áp dụng</strong>: Tập trung phun vào các góc
-                khuất, khe hở, dưới đồ nội thất, chân tường, sau tủ, và các điểm
-                côn trùng thường xuất hiện
+                <strong>Khu vực áp dụng</strong>: Tập trung phun vào các góc khuất, khe hở, dưới đồ nội thất, chân tường, sau tủ, và các điểm côn trùng thường xuất hiện
               </li>
             </ol>
-
             <div class="warning">
               <h4>Lưu ý an toàn</h4>
               <ul>
                 <li>Để xa tầm tay trẻ em và vật nuôi</li>
-                <li>
-                  Không phun trực tiếp lên thực phẩm, đồ dùng nhà bếp hoặc bề
-                  mặt tiếp xúc với thực phẩm
-                </li>
+                <li>Không phun trực tiếp lên thực phẩm, đồ dùng nhà bếp hoặc bề mặt tiếp xúc với thực phẩm</li>
                 <li>Tránh phun vào những ngày gió lớn</li>
                 <li>Che phủ bể cá và nguồn nước trước khi phun</li>
                 <li>Không tái sử dụng vỏ chai</li>
@@ -1503,7 +1504,6 @@
             />
           </div>
         </div>
-
         <div class="cases">
           <h3 class="subsection-title">Trường hợp sử dụng thực tế</h3>
           <div class="case-studies">
@@ -1516,9 +1516,7 @@
                 <h3>Chuỗi nhà hàng ABC</h3>
                 <p>
                   Chuỗi nhà hàng ABC sử dụng Icon 10CS trong chương trình IPM
-                  (Quản lý dịch hại tổng hợp) đã đạt được hiệu quả vượt trội
-                  trong việc kiểm soát côn trùng, nâng cao điểm đánh giá vệ
-                  sinh.
+                  (Quản lý dịch hại tổng hợp) đã đạt được hiệu quả vượt trội trong việc kiểm soát côn trùng, nâng cao điểm đánh giá vệ sinh.
                 </p>
                 <div class="case-stats">
                   <div class="case-stat">
@@ -1540,9 +1538,7 @@
               <div class="case-content">
                 <h3>Resort XYZ tại Phú Quốc</h3>
                 <p>
-                  Resort XYZ áp dụng Icon 10CS trong chương trình kiểm soát muỗi
-                  đã giảm đáng kể tỷ lệ khách phàn nàn về côn trùng, tiết kiệm
-                  chi phí phun thuốc nhờ kéo dài chu kỳ xử lý.
+                  Resort XYZ áp dụng Icon 10CS trong chương trình kiểm soát muỗi đã giảm đáng kể tỷ lệ khách phàn nàn về côn trùng, tiết kiệm chi phí phun thuốc nhờ kéo dài chu kỳ xử lý.
                 </p>
                 <div class="case-stats">
                   <div class="case-stat">
@@ -1564,9 +1560,7 @@
               <div class="case-content">
                 <h3>Trang trại chăn nuôi MNP</h3>
                 <p>
-                  Trang trại chăn nuôi MNP đã giảm tới 85% số lượng ruồi và 78%
-                  số ca bệnh liên quan đến côn trùng trung gian sau khi áp dụng
-                  Icon 10CS vào quy trình vệ sinh chuồng trại.
+                  Trang trại chăn nuôi MNP đã giảm tới 85% số lượng ruồi và 78% số ca bệnh liên quan đến côn trùng trung gian sau khi áp dụng Icon 10CS vào quy trình vệ sinh chuồng trại.
                 </p>
                 <div class="case-stats">
                   <div class="case-stat">
@@ -1582,34 +1576,26 @@
             </div>
           </div>
         </div>
-
         <div class="faq">
           <h3 class="subsection-title">Câu hỏi thường gặp</h3>
           <div class="accordion">
             <div class="accordion-item active">
               <div class="accordion-header">
-                Icon 10CS có an toàn khi sử dụng trong nhà có trẻ nhỏ và thú
-                cưng không?
+                Icon 10CS có an toàn khi sử dụng trong nhà có trẻ nhỏ và thú cưng không?
               </div>
               <div class="accordion-content">
                 <p>
-                  Khi sử dụng đúng cách theo hướng dẫn, Icon 10CS an toàn cho
-                  không gian có trẻ nhỏ và thú cưng. Tuy nhiên, cần để trẻ em và
-                  vật nuôi tránh xa khu vực vừa phun xịt cho đến khi khô hoàn
-                  toàn.
+                  Khi sử dụng đúng cách theo hướng dẫn, Icon 10CS an toàn cho không gian có trẻ nhỏ và thú cưng. Tuy nhiên, cần để trẻ em và vật nuôi tránh xa khu vực vừa phun xịt cho đến khi khô hoàn toàn.
                 </p>
               </div>
             </div>
             <div class="accordion-item">
               <div class="accordion-header">
-                Icon 10CS có thể sử dụng trong nhà bếp và khu vực chế biến thực
-                phẩm không?
+                Icon 10CS có thể sử dụng trong nhà bếp và khu vực chế biến thực phẩm không?
               </div>
               <div class="accordion-content">
                 <p>
-                  Có thể sử dụng trong nhà bếp, tuy nhiên cần tránh phun trực
-                  tiếp lên bề mặt tiếp xúc với thực phẩm. Sau khi phun, cần đợi
-                  thuốc khô hoàn toàn trước khi sử dụng khu vực.
+                  Có thể sử dụng trong nhà bếp, tuy nhiên cần tránh phun trực tiếp lên bề mặt tiếp xúc với thực phẩm. Sau khi phun, cần đợi thuốc khô hoàn toàn trước khi sử dụng khu vực.
                 </p>
               </div>
             </div>
@@ -1619,22 +1605,17 @@
               </div>
               <div class="accordion-content">
                 <p>
-                  Trên bề mặt không xốp, Icon 10CS có thể duy trì hiệu quả lên
-                  đến 3 tháng. Trên bề mặt xốp như gỗ, tường vôi, hiệu quả có
-                  thể ngắn hơn.
+                  Trên bề mặt không xốp, Icon 10CS có thể duy trì hiệu quả lên đến 3 tháng. Trên bề mặt xốp như gỗ, tường vôi, hiệu quả có thể ngắn hơn.
                 </p>
               </div>
             </div>
             <div class="accordion-item">
               <div class="accordion-header">
-                Icon 10CS có thể sử dụng trong các khu vực có chứng nhận HACCP
-                không?
+                Icon 10CS có thể sử dụng trong các khu vực có chứng nhận HACCP không?
               </div>
               <div class="accordion-content">
                 <p>
-                  Có, Icon 10CS có thể được sử dụng trong các cơ sở có chứng
-                  nhận HACCP khi tuân thủ đúng quy trình ứng dụng, thời gian
-                  cách ly và các quy định về an toàn thực phẩm.
+                  Có, Icon 10CS có thể được sử dụng trong các cơ sở có chứng nhận HACCP khi tuân thủ đúng quy trình ứng dụng, thời gian cách ly và các quy định về an toàn thực phẩm.
                 </p>
               </div>
             </div>
@@ -1647,7 +1628,6 @@
     <div id="downloads" class="tab-content">
       <div class="container">
         <h2 class="section-title">Tải xuống tài liệu</h2>
-
         <div class="downloads-container">
           <div class="download-item">
             <div class="download-icon">📄</div>
@@ -1657,7 +1637,6 @@
             </div>
             <a href="#" class="download-btn">⬇️</a>
           </div>
-
           <div class="download-item">
             <div class="download-icon">📄</div>
             <div class="download-info">
@@ -1666,7 +1645,6 @@
             </div>
             <a href="#" class="download-btn">⬇️</a>
           </div>
-
           <div class="download-item">
             <div class="download-icon">📄</div>
             <div class="download-info">
@@ -1675,7 +1653,6 @@
             </div>
             <a href="#" class="download-btn">⬇️</a>
           </div>
-
           <div class="download-item">
             <div class="download-icon">📄</div>
             <div class="download-info">
@@ -1685,7 +1662,6 @@
             <a href="#" class="download-btn">⬇️</a>
           </div>
         </div>
-
         <div class="resources">
           <h3 class="subsection-title">Tài nguyên bổ sung</h3>
           <div class="resources-container">
@@ -1695,12 +1671,9 @@
                 <li>
                   <div class="resource-icon icon-document"></div>
                   <div class="resource-details">
-                    <div class="resource-title">
-                      Bản thông số kỹ thuật đầy đủ
-                    </div>
+                    <div class="resource-title">Bản thông số kỹ thuật đầy đủ</div>
                     <div class="resource-desc">
-                      Thông tin chi tiết về thành phần, đặc tính kỹ thuật và dữ
-                      liệu an toàn
+                      Thông tin chi tiết về thành phần, đặc tính kỹ thuật và dữ liệu an toàn
                     </div>
                   </div>
                   <div class="resource-size">PDF - 2MB</div>
@@ -1708,12 +1681,9 @@
                 <li>
                   <div class="resource-icon icon-document"></div>
                   <div class="resource-details">
-                    <div class="resource-title">
-                      Hướng dẫn sử dụng chuyên nghiệp
-                    </div>
+                    <div class="resource-title">Hướng dẫn sử dụng chuyên nghiệp</div>
                     <div class="resource-desc">
-                      Hướng dẫn chi tiết về liều lượng, phương pháp ứng dụng và
-                      các biện pháp tối ưu hóa
+                      Hướng dẫn chi tiết về liều lượng, phương pháp ứng dụng và các biện pháp tối ưu hóa
                     </div>
                   </div>
                   <div class="resource-size">PDF - 3MB</div>
@@ -1736,12 +1706,9 @@
                 <li>
                   <div class="resource-icon icon-chart"></div>
                   <div class="resource-details">
-                    <div class="resource-title">
-                      Infographic về cơ chế tác động
-                    </div>
+                    <div class="resource-title">Infographic về cơ chế tác động</div>
                     <div class="resource-desc">
-                      Minh họa trực quan cách Lambda-cyhalothrin tác động lên
-                      côn trùng
+                      Minh họa trực quan cách Lambda-cyhalothrin tác động lên côn trùng
                     </div>
                   </div>
                   <div class="resource-size">PNG</div>
@@ -1757,9 +1724,7 @@
     <div class="container">
       <div class="related-products">
         <h2 class="related-title">Sản phẩm liên quan</h2>
-
         <div class="products-grid">
-          <!-- Product 1 -->
           <div class="product-card">
             <div class="card-image">
               <img
@@ -1777,26 +1742,13 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="#007bff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </div>
           </div>
-
-          <!-- Product 2 -->
           <div class="product-card">
             <div class="card-image">
               <img
@@ -1814,26 +1766,13 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="#007bff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </div>
           </div>
-
-          <!-- Product 3 -->
           <div class="product-card">
             <div class="card-image">
               <img
@@ -1851,26 +1790,13 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="#007bff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </div>
           </div>
-
-          <!-- Product 4 -->
           <div class="product-card">
             <div class="card-image">
               <img
@@ -1888,20 +1814,9 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="#007bff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </div>
@@ -1910,15 +1825,14 @@
       </div>
     </div>
 
+    <!-- Footer -->
     <footer id="contact">
       <div class="container">
         <div class="footer-container">
           <div class="footer-col">
             <h3>Về chúng tôi</h3>
             <p>
-              Syngenta PPM là thương hiệu hàng đầu về giải pháp kiểm soát sinh
-              vật hại chuyên nghiệp, cung cấp các sản phẩm và dịch vụ hiệu quả,
-              an toàn và bền vững.
+              Syngenta PPM là thương hiệu hàng đầu về giải pháp kiểm soát sinh vật hại chuyên nghiệp, cung cấp các sản phẩm và dịch vụ hiệu quả, an toàn và bền vững.
             </p>
           </div>
           <div class="footer-col">
@@ -1944,8 +1858,7 @@
           <div class="footer-col contact">
             <h3>Liên hệ</h3>
             <p>
-              <i class="icon-home"></i> Địa chỉ: Tòa nhà Syngenta, 19 Nguyễn
-              Trãi, TP. Hồ Chí Minh
+              <i class="icon-home"></i> Địa chỉ: Tòa nhà Syngenta, 19 Nguyễn Trãi, TP. Hồ Chí Minh
             </p>
             <p><i class="icon-phone"></i> Điện thoại: 1800 5858 20</p>
             <p><i class="icon-email"></i> Email: info.vietnam@syngenta.com</p>
@@ -1961,27 +1874,13 @@
     <script>
       // Tab functionality
       document.addEventListener("DOMContentLoaded", function () {
-        // Get all tab links
         const tabLinks = document.querySelectorAll(".tabs a");
-
-        // Add click event to each tab link
         tabLinks.forEach(function (tab) {
           tab.addEventListener("click", function (e) {
             e.preventDefault();
-
-            // Get the tab ID from the href attribute
             const tabId = this.getAttribute("href").substring(1);
-
-            // Remove active class from all tabs and content
-            document.querySelectorAll(".tabs a").forEach(function (el) {
-              el.classList.remove("active");
-            });
-
-            document.querySelectorAll(".tab-content").forEach(function (el) {
-              el.classList.remove("active");
-            });
-
-            // Add active class to current tab and content
+            document.querySelectorAll(".tabs a").forEach(el => el.classList.remove("active"));
+            document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
             this.classList.add("active");
             document.getElementById(tabId).classList.add("active");
           });
@@ -1992,35 +1891,23 @@
         if (sidebarBtn) {
           sidebarBtn.addEventListener("click", function (e) {
             e.preventDefault();
-
-            // Get the target tab ID from href
             const targetId = this.getAttribute("href").substring(1);
-
-            // Activate the target tab
-            document.querySelectorAll(".tabs a").forEach(function (tab) {
+            document.querySelectorAll(".tabs a").forEach(tab => {
               tab.classList.remove("active");
               if (tab.getAttribute("href") === "#" + targetId) {
                 tab.classList.add("active");
               }
             });
-
-            document
-              .querySelectorAll(".tab-content")
-              .forEach(function (content) {
-                content.classList.remove("active");
-              });
-
+            document.querySelectorAll(".tab-content").forEach(content => {
+              content.classList.remove("active");
+            });
             document.getElementById(targetId).classList.add("active");
-
-            // Scroll to the tab content
-            document
-              .getElementById(targetId)
-              .scrollIntoView({ behavior: "smooth" });
+            document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
           });
         }
 
         // Accordion functionality
-        document.querySelectorAll(".accordion-header").forEach((button) => {
+        document.querySelectorAll(".accordion-header").forEach(button => {
           button.addEventListener("click", () => {
             const accordionItem = button.parentElement;
             accordionItem.classList.toggle("active");
