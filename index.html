@@ -15,11 +15,6 @@
       Icon 10CS 62.5ml - Giải pháp chuyên nghiệp kiểm soát côn trùng | Syngenta
       PPM
     </title>
-    <!-- Sử dụng font Roboto cho giao diện hiện đại, đồng nhất -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
-      rel="stylesheet"
-    />
     <style>
       :root {
         --primary-color: #009639;
@@ -28,7 +23,6 @@
         --text-color: #333;
         --light-text: #666;
         --border-color: #ddd;
-        --transition: 0.3s ease-out;
       }
 
       * {
@@ -38,15 +32,10 @@
       }
 
       body {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
         color: var(--text-color);
-        letter-spacing: 0.3px;
         background-color: #fff;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        letter-spacing: 0.5px;
       }
 
       .container {
@@ -55,300 +44,23 @@
         padding: 0 20px;
       }
 
-      /* --- Header & Navigation --- */
-      header {
-        background-color: #fff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        border-bottom: 1px solid var(--border-color);
+      .tech-specs {
+        background-color: var(--secondary-color);
+        padding: 80px 30px;
+        margin-bottom: 80px;
+        border-radius: 10px;
       }
 
-      .top-header {
-        background-color: #f5f5f5;
-        padding: 6px 0;
-        font-size: 14px;
-      }
-
-      .top-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .left-nav, .right-nav {
-        display: flex;
-      }
-
-      .left-nav a, .right-nav a {
-        margin: 0 10px;
-        color: var(--light-text);
-        text-decoration: none;
-        transition: color var(--transition);
-      }
-
-      .left-nav a:hover, .right-nav a:hover {
-        color: var(--primary-color);
-      }
-
-      .header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 0;
-      }
-
-      .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .logo img {
-        height: 50px;
-        transition: transform var(--transition);
-      }
-
-      .logo img:hover {
-        transform: scale(1.05);
-      }
-
-      .logo span {
-        font-size: 14px;
-        color: var(--light-text);
-      }
-
-      nav ul {
-        display: flex;
-        list-style: none;
-      }
-
-      nav ul li {
-        margin-left: 30px;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 500;
-        padding: 8px 0;
-        transition: color var(--transition), border-bottom var(--transition);
-      }
-
-      nav ul li a:hover {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
-      }
-
-      /* --- Breadcrumbs --- */
-      .breadcrumbs {
-        padding: 12px 0;
-        font-size: 14px;
-        color: var(--light-text);
-        margin-bottom: 20px;
-      }
-
-      .breadcrumbs a {
-        color: var(--light-text);
-        text-decoration: none;
-        transition: color var(--transition);
-      }
-
-      .breadcrumbs a:hover {
-        color: var(--primary-color);
-      }
-
-      /* --- Product Section --- */
-      .product-section {
-        display: flex;
-        margin-bottom: 40px;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      }
-
-      .product-image {
-        width: 40%;
-        padding: 30px;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .product-image img {
-        max-width: 100%;
-      }
-
-      .product-details {
-        width: 60%;
-        padding: 30px;
-        background-color: var(--accent-color);
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .product-title {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-      }
-
-      .status {
-        display: inline-block;
-        padding: 4px 10px;
-        background-color: #333;
-        color: #fff;
-        font-size: 12px;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        border-radius: 3px;
-      }
-
-      .updated {
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-
-      .product-category {
-        font-size: 18px;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-      }
-
-      .product-subcategory {
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-
-      .specs-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-
-      .spec-item {
-        margin-bottom: 15px;
-      }
-
-      .spec-label {
+      .tech-specs .subsection-title {
+        font-size: 22px;
         font-weight: 600;
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-
-      .spec-value {
-        font-size: 14px;
-      }
-
-      /* --- Hero Section (nếu có) --- */
-      .hero {
-        background: linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)
-          ),
-          url("https://www.syngentappm.id/sites/g/files/kgtney606/files/media/image/2019/06/17/syngenta_icon_100cs_400x135.jpg?itok=bIF0wkyB")
-            no-repeat center center;
-        background-size: cover;
-        color: #fff;
-        padding: 80px 0;
+        margin-bottom: 40px;
         text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto 30px;
-      }
-
-      .btn {
-        display: inline-block;
-        background-color: var(--primary-color);
-        color: #fff;
-        padding: 12px 25px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: background-color var(--transition),
-          transform var(--transition);
-      }
-
-      .btn:hover {
-        background-color: #007a33;
-        transform: translateY(-2px);
-      }
-
-      /* --- Tabs --- */
-      .tabs {
-        display: flex;
-        list-style: none;
-        border-bottom: 1px solid var(--border-color);
-        margin-bottom: 40px;
-      }
-
-      .tabs li {
-        margin-right: 30px;
-      }
-
-      .tabs a {
-        display: block;
-        padding: 15px 0;
-        color: var(--text-color);
-        font-weight: bold;
-        text-decoration: none;
-        position: relative;
-        transition: color var(--transition);
-      }
-
-      .tabs a.active {
         color: var(--primary-color);
-      }
-
-      .tabs a.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        width: 100%;
-        height: 3px;
-        background-color: var(--primary-color);
-        border-radius: 2px;
-      }
-
-      .tab-content {
-        display: none;
-        margin-bottom: 40px;
-      }
-
-      .tab-content.active {
-        display: block;
-      }
-
-      /* --- Section Titles --- */
-      .sec-title {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .sec-title h2 {
-        font-size: 2rem;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-        display: inline-block;
         position: relative;
       }
 
-      .sec-title h2::after {
+      .tech-specs .subsection-title::after {
         content: "";
         position: absolute;
         bottom: -10px;
@@ -357,262 +69,123 @@
         width: 80px;
         height: 3px;
         background-color: var(--accent-color);
-        border-radius: 2px;
-      }
-
-      .section-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: var(--primary-color);
-        padding-bottom: 10px;
-        border-bottom: 3px solid var(--primary-color);
-        display: inline-block;
-      }
-
-      .subsection-title {
-        font-size: 18px;
-        margin: 25px 0 15px;
-        color: var(--primary-color);
-      }
-
-      /* --- Overview & Layout --- */
-      .overview {
-        display: flex;
-        align-items: center;
-        margin-bottom: 60px;
-        gap: 30px;
-      }
-
-      .overview-img {
-        flex: 1;
-        text-align: center;
-      }
-
-      .overview-img img {
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .overview-content {
-        flex: 1;
-        padding: 0 30px;
-      }
-
-      .overview-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-        color: var(--primary-color);
-      }
-
-      .overview-content p {
-        margin-bottom: 15px;
-      }
-
-      /* --- Technical Specs --- */
-      .tech-specs {
-        background-color: var(--secondary-color);
-        padding: 60px 0;
-        margin-bottom: 60px;
       }
 
       .specs-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        gap: 30px;
+        justify-content: center;
       }
 
       .spec-card {
         background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        padding: 25px;
-        width: calc(50% - 15px);
-        margin-bottom: 30px;
-        transition: transform var(--transition);
-      }
-
-      .spec-card:hover {
-        transform: translateY(-3px);
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        width: 100%;
+        max-width: 500px;
       }
 
       .spec-card h3 {
-        font-size: 1.3rem;
+        font-size: 20px;
         color: var(--primary-color);
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         padding-bottom: 10px;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
       }
 
-      /* --- Product Layout --- */
-      .product-layout {
-        display: flex;
-        gap: 30px;
+      .spec-card ul {
+        padding-left: 18px;
+        font-size: 15px;
+        color: var(--text-color);
+        line-height: 1.7;
       }
 
-      .product-main {
-        width: 70%;
-        padding-right: 40px;
-      }
-
-      .product-sidebar {
-        width: 30%;
-        background-color: var(--accent-color);
-        padding: 20px;
-        border-radius: 8px;
-        color: #fff;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .sidebar-title {
-        font-size: 24px;
+      .spec-card ul li {
         margin-bottom: 10px;
-      }
-
-      .sidebar-info {
-        margin-bottom: 10px;
-      }
-
-      .sidebar-label {
-        font-weight: 600;
-        font-size: 14px;
-        margin-bottom: 3px;
-      }
-
-      .sidebar-value {
-        font-size: 14px;
-      }
-
-      .sidebar-btn {
-        display: inline-block;
-        padding: 10px 25px;
-        background-color: #ff9900;
-        color: #fff;
-        border-radius: 20px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: background-color var(--transition),
-          transform var(--transition);
-        text-align: center;
-      }
-
-      .sidebar-btn:hover {
-        background-color: #e68a00;
-        transform: translateY(-2px);
-      }
-
-      /* --- Lists --- */
-      .benefit-list, .feature-list {
-        list-style: none;
-        margin-bottom: 30px;
-      }
-
-      .feature-list li, .benefit-list li {
-        margin-bottom: 10px;
-        padding-left: 20px;
         position: relative;
       }
 
-      .feature-list li::before, .benefit-list li::before {
-        content: "•";
+      .spec-card ul li::before {
+        content: "\2022";
+        color: var(--primary-color);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+
+      .feature-list li,
+      .benefit-list li {
+        list-style: none;
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .feature-list li::before,
+      .benefit-list li::before {
+        content: "\2022";
         position: absolute;
         left: 0;
         color: var(--primary-color);
         font-weight: bold;
       }
 
-      /* --- Benefits --- */
-      .benefits {
-        margin-bottom: 60px;
-      }
-
-      .benefits-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-      }
-
-      .benefit-card {
-        background-color: var(--secondary-color);
-        border-radius: 8px;
-        padding: 30px;
-        text-align: center;
-        transition: transform var(--transition), box-shadow var(--transition);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      }
-
-      .benefit-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      .benefit-icon {
-        font-size: 3rem;
+      .overview-content h3,
+      .usage-content h3,
+      .case-content h3,
+      .section-title,
+      .sidebar-title,
+      .resource-title {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.4rem;
         color: var(--primary-color);
-        margin-bottom: 20px;
-      }
-
-      .benefit-card h3 {
-        font-size: 1.2rem;
+        font-weight: 600;
         margin-bottom: 15px;
-        color: var(--primary-color);
       }
 
-      /* --- Usage --- */
-      .usage {
-        margin-bottom: 60px;
+      .case-content p,
+      .overview-content p,
+      .usage-content p {
+        font-size: 15px;
+        line-height: 1.7;
       }
 
-      .usage-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
+      .icon-home::before {
+        content: "\1F3E0";
+      }
+      .icon-restaurant::before {
+        content: "\1F37D";
+      }
+      .icon-hotel::before {
+        content: "\1F3E8";
+      }
+      .icon-farm::before {
+        content: "\1F3E1";
+      }
+      .icon-document::before {
+        content: "\1F4C4";
+      }
+      .icon-video::before {
+        content: "\1F4F9";
+      }
+      .icon-chart::before {
+        content: "\1F4CA";
+      }
+      .icon-case::before {
+        content: "\1F4CB";
       }
 
-      .usage-content {
-        flex: 1;
-        min-width: 300px;
+      .sidebar-info {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
       }
 
-      .usage-img {
-        flex: 1;
-        text-align: center;
-        min-width: 300px;
-        padding: 20px;
-      }
-
-      .usage-img img {
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      /* --- Table --- */
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-      }
-
-      table th, table td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid var(--border-color);
-      }
-
-      table th {
-        background-color: var(--primary-color);
-        color: #fff;
-      }
-
-      table tr:nth-child(even) {
-        background-color: var(--secondary-color);
-      }
-
-      /* --- Steps --- */
       .steps {
         counter-reset: step-counter;
         list-style-type: none;
@@ -622,7 +195,9 @@
       .steps li {
         position: relative;
         margin-bottom: 15px;
-        padding-left: 45px;
+        padding-left: 50px;
+        font-size: 15px;
+        line-height: 1.6;
         min-height: 30px;
       }
 
@@ -633,7 +208,7 @@
         left: 0;
         top: 0;
         background-color: var(--primary-color);
-        color: #fff;
+        color: white;
         font-weight: bold;
         width: 30px;
         height: 30px;
@@ -641,517 +216,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 14px;
       }
 
-      /* --- Warning Box --- */
-      .warning {
-        background-color: #fff3cd;
-        border-left: 4px solid #ffc107;
-        padding: 15px;
-        margin-bottom: 20px;
-        border-radius: 4px;
-      }
-
-      .warning h4 {
-        color: #856404;
-        margin-bottom: 10px;
-      }
-
-      /* --- Cases --- */
-      .cases {
-        margin-bottom: 60px;
-      }
-
-      .case-studies {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-      }
-
-      .case-card {
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        transition: transform var(--transition);
-      }
-
-      .case-card:hover {
-        transform: translateY(-3px);
-      }
-
-      .case-img {
-        height: 200px;
-        background-size: cover;
-        background-position: center;
-      }
-
-      .case-content {
-        padding: 20px;
-      }
-
-      .case-content h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-        color: var(--primary-color);
-      }
-
-      .case-content p {
-        margin-bottom: 15px;
-        font-size: 0.95rem;
-      }
-
-      .case-stats {
-        display: flex;
-        justify-content: space-between;
-        background-color: var(--secondary-color);
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 15px;
-      }
-
-      .case-stat {
-        text-align: center;
-      }
-
-      .case-stat .value {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-      }
-
-      .case-stat .label {
-        font-size: 0.8rem;
-        color: var(--light-text);
-      }
-
-      /* --- FAQ / Accordion --- */
-      .faq {
-        margin-bottom: 60px;
-      }
-
-      .accordion {
-        margin-bottom: 20px;
-      }
-
-      .accordion-item {
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        margin-bottom: 10px;
-        overflow: hidden;
-        transition: background-color var(--transition);
-      }
-
-      .accordion-header {
-        background-color: var(--secondary-color);
-        padding: 15px 20px;
-        cursor: pointer;
-        font-weight: 600;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .accordion-header:hover {
-        background-color: #eaeaea;
-      }
-
-      .accordion-content {
-        padding: 0 20px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-      }
-
-      .accordion-item.active .accordion-content {
-        padding: 20px;
-        max-height: 500px;
-      }
-
-      .accordion-header::after {
-        content: "+";
-        font-size: 1.5rem;
-        font-weight: 300;
-        transition: transform var(--transition);
-      }
-
-      .accordion-item.active .accordion-header::after {
-        content: "-";
-        transform: rotate(180deg);
-      }
-
-      /* --- Resources --- */
-      .resources {
-        margin-bottom: 60px;
-      }
-
-      .resources-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-      }
-
-      .resource-list {
-        background-color: var(--secondary-color);
-        border-radius: 8px;
-        padding: 25px;
-      }
-
-      .resource-list h3 {
-        color: var(--primary-color);
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--border-color);
-      }
-
-      .resource-list ul {
-        list-style: none;
-      }
-
-      .resource-list ul li {
-        padding: 10px 0;
-        border-bottom: 1px dashed var(--border-color);
-        display: flex;
-        align-items: center;
-      }
-
-      .resource-list ul li:last-child {
-        border-bottom: none;
-      }
-
-      .resource-icon {
-        margin-right: 15px;
-        color: var(--primary-color);
-        font-size: 1.2rem;
-      }
-
-      .resource-details {
-        flex: 1;
-      }
-
-      .resource-details .resource-title {
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
-
-      .resource-details .resource-desc {
-        font-size: 0.9rem;
-        color: var(--light-text);
-      }
-
-      .resource-size {
-        color: var(--light-text);
-        font-size: 0.8rem;
-        white-space: nowrap;
-      }
-
-      /* --- Downloads --- */
-      .downloads-container {
-        background-color: var(--accent-color);
-        padding: 20px;
-        border-radius: 8px;
-        color: #fff;
-      }
-
-      .download-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .download-item:last-child {
-        border-bottom: none;
-      }
-
-      .download-icon {
-        margin-right: 15px;
-      }
-
-      .download-info {
-        flex-grow: 1;
-      }
-
-      .download-name {
-        font-weight: 600;
-        color: #fff;
-        margin-bottom: 5px;
-      }
-
-      .download-size {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      .download-btn {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.2rem;
-        transition: transform var(--transition);
-      }
-
-      .download-btn:hover {
-        transform: scale(1.1);
-      }
-
-      /* --- Related Products --- */
-      .related-products {
-        margin: 60px 0;
-      }
-
+      .section-title,
       .related-title {
-        font-size: 24px;
-        margin-bottom: 30px;
-        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 25px;
         padding-bottom: 10px;
         border-bottom: 3px solid var(--primary-color);
-        display: inline-block;
-      }
-
-      .products-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-
-      .product-card {
-        border: 1px solid #eee;
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: #fff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        transition: transform var(--transition);
-      }
-
-      .product-card:hover {
-        transform: translateY(-3px);
-      }
-
-      .card-image {
-        padding: 20px;
-        border-bottom: 1px solid #eee;
-        text-align: center;
-      }
-
-      .card-content {
-        padding: 20px;
-      }
-
-      .card-category {
-        font-size: 12px;
-        color: var(--light-text);
-        margin-bottom: 5px;
-      }
-
-      .card-title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: var(--primary-color);
-      }
-
-      .card-status {
-        display: inline-block;
-        padding: 4px 8px;
-        background-color: var(--accent-color);
-        color: #fff;
-        font-size: 12px;
-        border-radius: 3px;
-        margin-bottom: 15px;
-      }
-
-      .card-specs {
-        margin-bottom: 15px;
-        font-size: 14px;
-        color: var(--light-text);
-      }
-
-      .read-more {
-        display: flex;
-        align-items: center;
-        color: var(--accent-color);
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: color var(--transition);
-      }
-
-      .read-more:hover {
-        color: var(--primary-color);
-      }
-
-      .read-more svg {
-        margin-left: 5px;
-      }
-
-      /* --- Footer --- */
-      footer {
-        background-color: var(--primary-color);
-        color: #fff;
-        padding: 50px 0 20px;
-      }
-
-      .footer-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        margin-bottom: 40px;
-      }
-
-      .footer-col h3 {
-        margin-bottom: 20px;
-        font-size: 1.2rem;
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .footer-col h3::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background-color: var(--accent-color);
-        border-radius: 2px;
-      }
-
-      .footer-col ul {
-        list-style: none;
-      }
-
-      .footer-col ul li {
-        margin-bottom: 10px;
-      }
-
-      .footer-col ul li a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        transition: color var(--transition);
-      }
-
-      .footer-col ul li a:hover {
-        color: #fff;
-      }
-
-      .footer-col.contact p {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 15px;
-      }
-
-      .footer-col.contact p i {
-        margin-right: 10px;
-        color: var(--accent-color);
-      }
-
-      .copyright {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      /* --- Responsive --- */
-      @media (max-width: 992px) {
-        .product-section {
-          flex-direction: column;
-        }
-        .product-image, .product-details {
-          width: 100%;
-        }
-        .product-layout {
-          flex-direction: column;
-        }
-        .product-main, .product-sidebar {
-          width: 100%;
-        }
-        .product-main {
-          padding-right: 0;
-          margin-bottom: 30px;
-        }
-        .overview {
-          flex-direction: column;
-        }
-        .overview-img {
-          margin-bottom: 30px;
-        }
-        .spec-card {
-          width: 100%;
-        }
-        .benefits-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .case-studies {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .footer-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .products-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header-container {
-          flex-direction: column;
-        }
-        nav ul {
-          margin-top: 20px;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        nav ul li {
-          margin: 0 10px 10px;
-        }
-        .top-nav {
-          flex-direction: column;
-          align-items: center;
-        }
-        .left-nav, .right-nav {
-          margin-bottom: 5px;
-        }
-        .benefits-container, .case-studies, .resources-container, .products-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* --- Icon Styles --- */
-      .icon-shield::before {
-        content: "🛡";
-      }
-      .icon-lab::before {
-        content: "🔬";
-      }
-      .icon-target::before {
-        content: "🎯";
-      }
-      .icon-home::before {
-        content: "⌂";
-      }
-      .icon-restaurant::before {
-        content: "🍽";
-      }
-      .icon-hotel::before {
-        content: "🛎";
-      }
-      .icon-farm::before {
-        content: "🌾";
-      }
-      .icon-document::before {
-        content: "📄";
-      }
-      .icon-video::before {
-        content: "🎥";
-      }
-      .icon-chart::before {
-        content: "📈";
-      }
-      .icon-case::before {
-        content: "🗂";
       }
     </style>
   </head>
@@ -1199,8 +272,7 @@
     <!-- Breadcrumbs -->
     <div class="container">
       <div class="breadcrumbs">
-        <a href="#">TRANG CHỦ</a> / <a href="#">SẢN PHẨM</a> /
-        <a href="#">THUỐC DIỆT CÔN TRÙNG</a> / ICON 10CS 62.5ml
+        <a href="#">TRANG CHỦ</a> / <a href="#">SẢN PHẨM</a> / <a href="#">THUỐC DIỆT CÔN TRÙNG</a> / ICON 10CS 62.5ml
       </div>
     </div>
 
@@ -1334,34 +406,25 @@
                     <li>Mùi: Nhẹ, đặc trưng</li>
                     <li>Độ pH: 5.0-7.0</li>
                     <li>Tỷ trọng: 1.02-1.04 g/ml ở 20°C</li>
-                    <li>
-                      Độ hòa tan: Có thể hòa tan trong nước tạo hỗn hợp đồng
-                      nhất
-                    </li>
+                    <li>Độ hòa tan: Có thể hòa tan trong nước tạo hỗn hợp đồng nhất</li>
                     <li>Độ bền nhiệt: Ổn định ở nhiệt độ lên đến 40°C</li>
-                    <li>
-                      Độ bền với tia UV: Cải thiện đáng kể nhờ công nghệ vi nang
-                    </li>
+                    <li>Độ bền với tia UV: Cải thiện đáng kể nhờ công nghệ vi nang</li>
                   </ul>
                 </div>
                 <div class="spec-card">
                   <h3>Hiệu quả kiểm soát cụ thể</h3>
                   <ul>
                     <li>
-                      Hiệu quả diệt muỗi (Aedes spp., Culex spp., Anopheles
-                      spp.): >95% sau 24 giờ, >90% tồn dư sau 30 ngày
+                      Hiệu quả diệt muỗi (Aedes spp., Culex spp., Anopheles spp.): >95% sau 24 giờ, >90% tồn dư sau 30 ngày
                     </li>
                     <li>
-                      Hiệu quả diệt gián Mỹ (Periplaneta americana): >90% sau 48
-                      giờ, >85% tồn dư sau 60 ngày
+                      Hiệu quả diệt gián Mỹ (Periplaneta americana): >90% sau 48 giờ, >85% tồn dư sau 60 ngày
                     </li>
                     <li>
-                      Hiệu quả diệt gián Đức (Blattella germanica): >92% sau 48
-                      giờ, >80% tồn dư sau 60 ngày
+                      Hiệu quả diệt gián Đức (Blattella germanica): >92% sau 48 giờ, >80% tồn dư sau 60 ngày
                     </li>
                     <li>
-                      Hiệu quả diệt kiến (Solenopsis spp., Monomorium spp.):
-                      >90% sau 72 giờ
+                      Hiệu quả diệt kiến (Solenopsis spp., Monomorium spp.): >90% sau 72 giờ
                     </li>
                   </ul>
                 </div>
@@ -1372,7 +435,7 @@
             <img
               src="https://www.syngentappm.id/sites/g/files/kgtney606/files/media/image/2019/06/17/syngenta_icon_100cs_400x135.jpg?itok=bIF0wkyB"
               alt="ICON 10CS 62.5ml"
-              style="width: 100%; border-radius: 4px;"
+              style="width: 100%; margin-bottom: 20px"
             />
             <h3 class="sidebar-title">Icon 10CS 62.5ml</h3>
             <div class="sidebar-info">
@@ -1426,18 +489,15 @@
             <ul>
               <li>
                 <span class="icon-home"></span>
-                <strong>Không gian gia đình</strong> - Bảo vệ trẻ em và thú cưng
-                khỏi côn trùng gây hại và bệnh truyền nhiễm
+                <strong>Không gian gia đình</strong> - Bảo vệ trẻ em và thú cưng khỏi côn trùng gây hại và bệnh truyền nhiễm
               </li>
               <li>
                 <span class="icon-restaurant"></span>
-                <strong>Nhà hàng, quán nước</strong> - Đảm bảo vệ sinh an toàn
-                thực phẩm, nâng cao trải nghiệm khách hàng
+                <strong>Nhà hàng, quán nước</strong> - Đảm bảo vệ sinh an toàn thực phẩm, nâng cao trải nghiệm khách hàng
               </li>
               <li>
                 <span class="icon-hotel"></span>
-                <strong>Khách sạn, resort</strong> - Kiểm soát côn trùng hiệu
-                quả, duy trì môi trường sạch sẽ cho du khách
+                <strong>Khách sạn, resort</strong> - Kiểm soát côn trùng hiệu quả, duy trì môi trường sạch sẽ cho du khách
               </li>
               <li>
                 <span class="icon-farm"></span>
@@ -1515,8 +575,7 @@
               <div class="case-content">
                 <h3>Chuỗi nhà hàng ABC</h3>
                 <p>
-                  Chuỗi nhà hàng ABC sử dụng Icon 10CS trong chương trình IPM
-                  (Quản lý dịch hại tổng hợp) đã đạt được hiệu quả vượt trội trong việc kiểm soát côn trùng, nâng cao điểm đánh giá vệ sinh.
+                  Chuỗi nhà hàng ABC sử dụng Icon 10CS trong chương trình IPM (Quản lý dịch hại tổng hợp) đã đạt được hiệu quả vượt trội trong việc kiểm soát côn trùng, nâng cao điểm đánh giá vệ sinh.
                 </p>
                 <div class="case-stats">
                   <div class="case-stat">
@@ -1742,9 +801,20 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="#007bff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </a>
             </div>
@@ -1766,9 +836,20 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="#007bff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </a>
             </div>
@@ -1790,9 +871,20 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="#007bff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </a>
             </div>
@@ -1814,9 +906,20 @@
               </div>
               <a href="#" class="read-more">
                 Xem thêm
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="#007bff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </a>
             </div>
@@ -1825,7 +928,6 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <footer id="contact">
       <div class="container">
         <div class="footer-container">
@@ -1872,7 +974,6 @@
     </footer>
 
     <script>
-      // Tab functionality
       document.addEventListener("DOMContentLoaded", function () {
         const tabLinks = document.querySelectorAll(".tabs a");
         tabLinks.forEach(function (tab) {
@@ -1886,7 +987,6 @@
           });
         });
 
-        // Sidebar button functionality
         const sidebarBtn = document.querySelector(".sidebar-btn");
         if (sidebarBtn) {
           sidebarBtn.addEventListener("click", function (e) {
@@ -1906,7 +1006,6 @@
           });
         }
 
-        // Accordion functionality
         document.querySelectorAll(".accordion-header").forEach(button => {
           button.addEventListener("click", () => {
             const accordionItem = button.parentElement;
